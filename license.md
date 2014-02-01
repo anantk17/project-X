@@ -1,1 +1,1 @@
-Copyright 2014 Anant Kandikuppa, 
+Copyright 2014 Anant Kandikuppa
