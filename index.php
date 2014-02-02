@@ -24,6 +24,8 @@ $openid->returnUrl = 'http://localhost/nitc-market/login.php'
 
 
 ?>
+
+<?php session_start(); ?>
 <!Doctype html>
 <html>
 <head>
@@ -35,7 +37,13 @@ $openid->returnUrl = 'http://localhost/nitc-market/login.php'
 
 <input type="text" placeholder="Search Across Stuffs...">
 <input type="submit" value="Search">
+
+<?php if (isset($_SESSION['username'])) {?>
+	<p>Welcome back, <?=$_SESSION['username'];?>!</p>
+	<?php } else {?>
 <a href="<?php echo $openid->authUrl() ?>" >Login with Google</a>
+<?php } ?>
+
 <div id="drpdwn"><!--<?php include 'dropdown.php'; ?>-->
 <p style="text-align:right; color:white; padding-right:50px;padding-top: -610px;">No Need To SignUp!</p>
 </div>

@@ -52,6 +52,8 @@ if($openid->mode)
 				{
 					echo "User already exists";
 				}
+				session_start();
+				$_SESSION['username'] = $first;
 				//Put redirection and close window						
 				//echo '<a href = "index.php">Back Home</a>';
 				header('Location: index.php');
