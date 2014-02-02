@@ -2,7 +2,7 @@
 
 $ip = 'localhost';
 
-require_once 'openid.php';
+require_once 'php/openid.php';
 $openid = new LightOpenID($ip);
 
 $openid->identity = 'https://www.google.com/accounts/o8/id';
@@ -11,7 +11,7 @@ $openid->required = array(
   'namePerson/last',
   'contact/email',
 );
-$openid->returnUrl = 'http://localhost/login.php'
+$openid->returnUrl = 'http://localhost/nitc-market/login.php'
 
 /*if($_GET["varname"] == "false")
 {
@@ -28,7 +28,7 @@ $openid->returnUrl = 'http://localhost/login.php'
 <html>
 <head>
 <title>NITC Market</title>
-<link href="style.css" rel="stylesheet" media="screen">
+<link href="css/style.css" rel="stylesheet" media="screen">
 </head>
 <body>
 <h1>NITC <span style="color:#2D84DF;">Market</h1>
@@ -37,7 +37,7 @@ $openid->returnUrl = 'http://localhost/login.php'
 <input type="submit" value="Search">
 <a href="<?php echo $openid->authUrl() ?>" >Login with Google</a>
 <div id="drpdwn"><!--<?php include 'dropdown.php'; ?>-->
-<p style="text-align:right; color:white; padding-right:50px;padding-top: -610px;">No Need TO SingUp!</p>
+<p style="text-align:right; color:white; padding-right:50px;padding-top: -610px;">No Need To SignUp!</p>
 </div>
 <div id="drpdwn2"></div>
 <div id="mainbox">

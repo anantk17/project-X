@@ -2,7 +2,7 @@
 
 $ip = 'localhost';
 
-require_once 'openid.php';
+require_once 'php/openid.php';
 
 $openid = new LightOpenID($ip);
 
