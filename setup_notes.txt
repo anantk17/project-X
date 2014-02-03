@@ -1,0 +1,16 @@
+To correctly run the project you should have a LAMP,WAMP,XAMP server running the following:
+> PHP 5
+> MySQL
+on your machine and you should bee having access to a phpmyadmin account
+
+1> Create a mysql table with the following columns 
+	'ID' -> Primary Key
+	'Email' 
+	'Name'
+	'openid'
+	
+2> Enter your MySql db details in php/config.php according to your sql db configuration.
+   Just replace your server name (localhost if developing on your pc), user name , password  with the temp values given.
+   In login.php, line 30, change "test" to the name of your db.
+   
+   Presto!, You should be ready to run the project on your server.	
