@@ -3,6 +3,7 @@
 $ip = 'localhost';
 
 require_once 'php/openid.php';
+require_once 'php/connect.php';
 
 $openid = new LightOpenID($ip);
 
@@ -18,14 +19,15 @@ if($openid->mode)
 		$email = $data['contact/email'];
 		$first = $data['namePerson/first'];
 
-		$mysqli = mysqli_connect("localhost","anant","sqlpwd","test");
+		//$mysqli = mysqli_connect("localhost","anant","sqlpwd","test");
 		
-		if(mysqli_connect_errno())
-		{
-			printf("Connect failed: %s\n",mysqli_connect_error());
-			exit();
-		}
-		else{
+		//if(mysqli_connect_errno())
+		//{
+		//	printf("Connect failed: %s\n",mysqli_connect_error());
+		//	exit();
+		//}
+		//else{
+		$mysqli = dbConnect("test");
 		if(strstr($email,"@nitc.ac.in"))
 		{
 			$sql = "SELECT * FROM Users where Email = '".$email."'";
@@ -78,7 +80,7 @@ if($openid->mode)
 			//header('Location: index.php?varname=false');
 			//echo '<scrit
 		}
-		}
+		//}
 	}
 	else
 	{
