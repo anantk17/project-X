@@ -40,8 +40,9 @@ $openid->returnUrl = 'http://localhost/nitc-market/login.php'
 
 <?php if (isset($_SESSION['username'])) {?>
 	<p>Welcome back, <?=$_SESSION['username'];?>!</p>
-	<?php } else {?>
-<a href="<?php echo $openid->authUrl() ?>" >Login with Google</a>
+	<a href = "logout.php">Logout</a>
+	<?php } else {?> 
+<a href="<?php echo $openid->authUrl() ?>" >Login with NITC email</a>
 <?php } ?>
 
 <div id="drpdwn"><!--<?php include 'dropdown.php'; ?>-->
