@@ -5,7 +5,7 @@ $ip = 'localhost';
 require_once 'php/openid.php';
 
 $openid = new LightOpenID($ip);
-
+$flag = 0;
 if($openid->mode)
 {
 	if($openid->mode == 'cancel')
@@ -40,8 +40,8 @@ if($openid->mode)
 				
 					if($res == TRUE)
 					{
+						$flag = 1;
 						echo "A record has been inserted";
-					
 					}
 					else
 					{
@@ -50,13 +50,18 @@ if($openid->mode)
 				}
 				else
 				{
+					
 					echo "User already exists";
 				}
 				session_start();
 				$_SESSION['username'] = $first;
+				$_SESSION['id'] = $openid->identity;
 				//Put redirection and close window						
 				//echo '<a href = "index.php">Back Home</a>';
-				header('Location: index.php');
+				if($flag == 1)
+					header('Location: userreg.php');
+				else
+					header('Location: index.php');
 
 				mysqli_close($mysqli);
 			}
