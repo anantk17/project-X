@@ -11,15 +11,17 @@
 	}
 	else
 	{
-		echo $_POST['name'];
-		echo $_POST['mobile'];
-		echo $_POST['add'];
-		echo $_SESSION['id'];
+		//echo $_POST['name'];
+		//echo $_POST['mobile'];
+		//echo $_POST['add'];
+		//echo $_SESSION['id'];
+		
 		$sql = "UPDATE Users SET Name= '".$_POST['name']."', Mobile = '".(int)$_POST['mobile']."', Address= '".$_POST['add']."' WHERE openid = '".$_SESSION['id']."'";
 		$res = mysqli_query($mysqli,$sql);
-
 		if($res)
 		{
+			$_SESSION['username'] = $_POST['name'];
+			header('Location: index.php');
 			echo "Updated";
 		}
 		else
