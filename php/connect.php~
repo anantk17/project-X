@@ -3,7 +3,7 @@
 	$dbuser = "anant";
 	$dbpwd = "sqlpwd";
 	
-	function dbConnect($db)
+	function dbConnect($db="")
 	{
 		global $dbhost, $dbuser, $dbpwd;
 		
@@ -13,5 +13,5 @@
 		{
 			printf("Connect failed: %s\n", mysqli_connect_error());
 			exit();
-		}
-	}
+		}		
+?>

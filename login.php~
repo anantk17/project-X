@@ -27,7 +27,7 @@ if($openid->mode)
 			exit();
 		}
 		else{
-		$mysqli = dbConnect("test");
+		//$mysqli = dbConnect("test");
 		if(strstr($email,"@nitc.ac.in"))
 		{
 			$sql = "SELECT * FROM Users where Email = '".$email."'";
@@ -70,10 +70,15 @@ if($openid->mode)
 		}
 		else
 		{
+			//echo "User authentication failed!";
+			//echo 'Please use a VALID NITC email id <br>';
 			echo '<script type="text/javascript">'
 				,'var t = confirm("Email Id incorrect. Fuck off!");'
 				,'if(t == true) window.location.assign("index.php");'
 				,'</script>';
+			
+			//header('Location: index.php?varname=false');
+			//echo '<scrit
 		}
 		}
 	}
