@@ -1,5 +1,5 @@
 <?php // index.php
-
+try{
 $ip = 'localhost';
 
 require_once 'php/openid.php';
@@ -11,8 +11,12 @@ $openid->required = array(
   'namePerson/last',
   'contact/email',
 );
-$openid->returnUrl = 'http://localhost/nitc-market/login.php'
-
+$openid->returnUrl = 'http://localhost/nitc-market/login.php';
+}
+catch(ErrorException $e)
+{
+	echo $e->getMessage();
+}
 /*if($_GET["varname"] == "false")
 {
 	echo "Fuck off.";
@@ -21,8 +25,6 @@ $openid->returnUrl = 'http://localhost/nitc-market/login.php'
 //echo $_GET["varname"];
 //if(isset($_GET["varname"]))
 //	echo "Fuck Off";
-
-
 ?>
 
 <?php session_start(); ?>
@@ -42,7 +44,8 @@ $openid->returnUrl = 'http://localhost/nitc-market/login.php'
 	<p>Welcome back, <?=$_SESSION['username'];?>!</p>
 	<a href = "logout.php">Logout</a>
 	<?php } else {?> 
-<a href="<?php echo $openid->authUrl() ?>" >Login with NITC email</a>
+<a href="<?php try {echo $openid->authUrl();} catch(Exception $e){	//Try-catch to let the page render completely when internet is not working
+	echo $e->getMessage();} ?>" >Login with NITC email</a>
 <?php } ?>
 
 <div id="drpdwn"><!--<?php include 'dropdown.php'; ?>-->
