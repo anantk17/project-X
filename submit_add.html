@@ -1,24 +1,115 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <title>Form ad</title>
+    <style>
+    @font-face
+    {
+	    font-family: helvetica;
+	    src:url('helvetica.woff');
+    }
+    body{
+        background-color:#282828;
+        font-family: helvetica;
+    }
+    #fbody{
+        border: 0px white;
+        background-color: white;
+        padding: 10px 20px 10px 20px;
+        width: 30%;
+        position: relative;
+        /*display: none;*/
+    }
+    #fbody:hover{
+        border: 4px pink;
+    }
+    .f1{
+        border: 0px;
+        background-color: white;
+         font-size: 16px;
+         color: #3d3d3d;
+    }
+    .fok{
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 8px;
+        color: #196AD4;
+        font-size: 16px;
+    }
+    textarea{
+        font-family: helvetica;
+        font-weight: bold;
+        overflow: hidden;
+        color: #196AD4;
+        resize: none;
+    }
+    .fbutt{
+        border: 0px;
+        padding: 5px 10px 5px 10px;
+        border-radius: 5px;
+        color: white;
+        background-color: #E0122F;       
+    }
+    #anadd{
+        background-color: #E0122F; 
+        width: 30%;
+        text-align:center;
+        padding: 5px 20px 5px 20px;
+        font-weight: bolder;
+        font-size: 18px;
+        color: white;
+        position:relative;
+    }
+    #hideit{
+        border: 0px white;
+        background-color: white;
+        padding: 10px 20px 10px 20px;
+        width: 30%;
+        height:inherit;
+        position: relative;
+        color: gray;
+        line-height: 30px;
+        font-weight:700;
+    }
+    #accpro{
+        text-decoration:underline;
+        color: #196AD4;
+        font-size: 14px;
+        cursor:pointer;
+        text-align:center;
+        
+    }
+    </style>
+    <script>
+        /*document.getElementById("accpro").onclick = set1;
+        function set1(){
+            document.getElementById("hideit").style.display="none";
+            document.getElementById("fbody").style.display="inline";
+        };*/
+    </script>
 </head>
 <body>
-	<form method="post" action="php/submit_add.php" enctype="multipart/form-data">
-		<label>ITEM TITLE</label>
-		<input type="text" name="title"><br />
-		
-		<label>DESCRIPTION</label>
-		<textarea cols="40" rows="3" name="desc"></textarea><br />
-		
-		<label>Screenshot</label>
-		<input type="file" name="pic" /><br />
-		
-		<label>Price</label>
-		<input type="text" name="price"><br />
-		
-		<input type="submit">
-	</form>
+    <div id="anadd">Add</div>
+    <!--<div id="hideit">
+    <ol><p style="color:#196AD4; letter-spacing: 1.1px;">Instructions before you post <span style="color:#E0122F;">anything</span>:</p>
+        <li>nstructions before you</li>
+        <li>nstructioefore you</li>
+        <li>nstructfore you</li>
+        <li>nstrucs before you</li>
+        <li>nstns before</li>
+    </ol>
+    <p id="accpro">Accept and Proceed >></p>
+    </div>-->
+    <div id="fbody">
+        <form method="post" action="php/submit_add.php" enctype="multipart/form-data">
+            <div class="fok"><input placeholder="Product Name" type="text" name="title" class="f1" size="30"></div>
+            <div class="fok"><input placeholder="Selling Price" type="text" name="price" class="f1" size="12"></div>
+            <div class="fok"><textarea placeholder="Description" name="desc" class="f1" cols="40" rows="12"></textarea></div>
+            <br>
+            <input type="file" name="pic" class="fbutt" value="PicUpload">
+            <input style="float:right;" type="submit" name="" class="fbutt" value="Submit">
+        </form>
+        </div>
+    </div>
 </body>
 </html>

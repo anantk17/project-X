@@ -20,7 +20,7 @@ if($openid->mode)
 		$first = $data['namePerson/first'];
 
 	//	$mysqli = mysqli_connect("localhost","anant","sqlpwd","test");
-		$mysqli = dbConnect("nitc_market");
+		$mysqli = dbConnect();
 		if(mysqli_connect_errno())
 		{
 			printf("Connect failed: %s\n",mysqli_connect_error());

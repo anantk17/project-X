@@ -5,7 +5,7 @@
 	$user = $_SESSION['username'];
 	$id = $_SESSION['id'];
 	
-	$mysqli = dbConnect("nitc_market");
+	$mysqli = dbConnect();
 	if(mysqli_connect_errno())
 	{
 		printf("Connect failed: %s\n",mysqli_connect_error());
@@ -13,6 +13,11 @@
 	}
 	else
 	{
+		//echo $_POST['name'];
+		//echo $_POST['mobile'];
+		//echo $_POST['add'];
+		//echo $_SESSION['id'];
+		
 		$sql = "UPDATE Users SET Name= '".$_POST['name']."', Mobile = '".(int)$_POST['mobile']."', Address= '".$_POST['add']."' WHERE openid = '".$_SESSION['id']."'";
 		$res = mysqli_query($mysqli,$sql);
 		if($res)

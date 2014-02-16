@@ -1,7 +1,8 @@
 <?php
 	session_start();
-	$dbc = mysqli_connect('localhost', 'anant', 'sqlpwd', 'test');
-	
+	require_once 'connect.php';
+	//$dbc = mysqli_connect('localhost', 'anant', 'sqlpwd', 'test');
+	$dbc = dbConnect();
 	$title=$_POST['title'];
 	$descrip=$_POST['desc'];
 	$price=$_POST['price'];
@@ -11,14 +12,7 @@
 	
 	$target='../media/';
 	$target = $target . basename( $_FILES['pic']['name']);
-	if(move_uploaded_file($_FILES['pic']['tmp_name'], $target))
-	{
-		;
-	}
-	else
-	{
-		echo "Error in uploading file"; 
-	};
+	move_uploaded_file($_FILES['pic']['tmp_name'], $target);
 	
 	if(isset($title)&&isset($descrip)&&isset($price)) {
 			$query = "INSERT INTO `ads`(title, user, pic_url, price, posted, descrip) VALUES ('$title', '$user', '$file', '$price', '$date', '$descrip')";
