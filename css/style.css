@@ -16,12 +16,11 @@ input{
 	padding: 5px;
 	font-size: 14px;
 }
-input[type='submit']{
+#go{
 	background-color: #FDD922;
 	color: darkblue;
 	border-radius: 2px;
 	border: 0px;
-	box-shadow: 2px 2px 2px gray;
 	padding: 6px;
 }
 input[type='button']{
@@ -32,6 +31,7 @@ input[type='button']{
 	z-index: 1;
 	font-size: 14px;
 }
+
 #drpdwn{
 	background:#104E8B;
 	width: 100%;
@@ -40,6 +40,36 @@ input[type='button']{
 	top: 0px;
 	left: 0px;
 
+}
+#corno{
+text-align: right;
+color: white;
+font-family: Garamond, Arial;
+}
+pure-button-hover, .pure-button:hover, .pure-button:focus {
+    background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1));
+}
+a:active, a:hover {
+    outline: 0px none;
+}
+.pure-button {
+    font-family: inherit;
+    font-size: 100%;
+    padding: 0.5em 1em;
+    color: rgba(0, 0, 0, 0.8);
+    border: 0px none transparent;
+    background-color: rgb(230, 230, 230);
+    text-decoration: none;
+    border-radius: 2px;
+}
+.pure-button {
+    display: inline-block;
+    line-height: normal;
+    white-space: nowrap;
+    vertical-align: baseline;
+    text-align: center;
+    cursor: pointer;
+    -moz-user-select: none;
 }
 #drpdwn2{
 	background:transparent;
