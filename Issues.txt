@@ -1,0 +1,5 @@
+Issue to be done next time:
+1. JS Validation.
+2. Submit button color change.
+3. Instruction page configure(change bit css).
+4. Good Transformation from instruction to form page.
