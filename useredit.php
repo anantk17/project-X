@@ -1,9 +1,11 @@
 <?php
+
+	require_once 'php/connect.php';
 	session_start();
 	$user = $_SESSION['username'];
 	$id = $_SESSION['id'];
 	
-	$mysqli = mysqli_connect("localhost","anant","sqlpwd","test");
+	$mysqli = dbConnect("nitc_market");
 	if(mysqli_connect_errno())
 	{
 		printf("Connect failed: %s\n",mysqli_connect_error());
