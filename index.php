@@ -35,16 +35,16 @@ catch(ErrorException $e)
 <link href="css/style.css" rel="stylesheet" media="screen">
 </head>
 <body>
-<h1>NITC <span style="color:#2D84DF;">Market</h1>
+<h1>NITC <span style="color:#2D84DF"></span>Market</h1>
 
 <input type="text" placeholder="Search Across Stuffs...">
 <input type="submit" value="Search">
 
 <?php if (isset($_SESSION['username'])) {?>
-	<p>Welcome back, <?=$_SESSION['username'];?>!</p>
+	<p>Welcome back, <?php echo $_SESSION['username'];?>!</p>
 	<a href = "logout.php">Logout</a>
-	<a href = "submit_add.html">Post an ad</a>
-	<?php } else {?> 
+	<?php }
+	 else {?> 
 <a href="<?php try {echo $openid->authUrl();} catch(Exception $e){	//Try-catch to let the page render completely when internet is not working
 	echo $e->getMessage();} ?>" >Login with NITC email</a>
 <?php } ?>

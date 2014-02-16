@@ -3,6 +3,7 @@
 $ip = 'localhost';
 
 require_once 'php/openid.php';
+require_once 'php/connect.php';
 
 $openid = new LightOpenID($ip);
 $flag = 0;
@@ -18,8 +19,8 @@ if($openid->mode)
 		$email = $data['contact/email'];
 		$first = $data['namePerson/first'];
 
-		$mysqli = mysqli_connect("localhost","anant","sqlpwd","test");
-		
+	//	$mysqli = mysqli_connect("localhost","anant","sqlpwd","test");
+		$mysqli = dbConnect("nitc_market");
 		if(mysqli_connect_errno())
 		{
 			printf("Connect failed: %s\n",mysqli_connect_error());
