@@ -44,6 +44,7 @@ catch(ErrorException $e)
 	<p>Welcome back, <?php echo $_SESSION['username'];?>!</p>
 	<a href = "logout.php">Logout</a>
 	<a href = "submit_add.html">Post an add</a>
+	<a href = "php/account.php">Account</a>
 	<?php }
 	 else {?> 
 <a href="<?php try {echo $openid->authUrl();} catch(Exception $e){	//Try-catch to let the page render completely when internet is not working

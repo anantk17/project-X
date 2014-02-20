@@ -31,5 +31,6 @@
 			echo "Could not access DB";
 		}
 	}
+	mysqli_close($mysqli);
 	
 ?>
