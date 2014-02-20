@@ -13,6 +13,12 @@
 			echo "Email : ".$row['Email']."<br>";
 			echo "Mobile : ".$row['Mobile']."<br>";
 			echo "Address : ".$row['Address']."<br>";
+			
+			echo "<br>";
+			echo "<br>";
+			
+			echo "<a href = '../userreg.php'>Edit Profile</a><br>";
+			echo "<a href = '../index.php'>Back to index</a><br>";
 		}
 	}
 	else
