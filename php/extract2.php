@@ -4,7 +4,8 @@
 </head>
 <body>
 <?php
-	$dbc = mysqli_connect('localhost', 'root', '', 'nitc_market');
+	require_once 'connect.php';
+	$dbc = dbConnect();
 	
 	$query = "SELECT * FROM `ads` WHERE category = 'games'";
 	$data = mysqli_query($dbc, $query);
